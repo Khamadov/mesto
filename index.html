@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+<body class="page">
+    <header class="header">
+        <div class="header__logo"></div>
+    </header>
+    <main class="content">
+        <section class="profile">
+            <div class="profile__data">
+           <img src="./images/image_avatar.png" alt="Фото" class="profile__avatar">
+            <div class="profile__info">
+                <div class="profile__container">
+                <p class="profile__name">Жак-Ив Кусто</p>
+                <button class="profile__edit-button"></button>
+                </div>
+                <p class="profile__profession">Исследователь океана</p>
+            </div>
+            </div>
+            <button class="profile__add-button"></button>
+        </section>
+        <section class="elements">
+            <div class="element">
+                <img src="./images/photo_1.png" alt="" class="element__photo">
+    
+                <div class="element__description">
+                <p class="element__place">Карачаевск</p>
+                <button class="element__like"></button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/photo_2.png" alt="" class="element__photo">
+    
+                <div class="element__description">
+                <p class="element__place">Гора Эльбрус</p>
+                <button class="element__like"></button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/photo_3.png" alt="" class="element__photo">
+    
+                <div class="element__description">
+                <p class="element__place">Домбай</p>
+                <button class="element__like"></button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/photo_2.png" alt="" class="element__photo">
+    
+                <div class="element__description">
+                <p class="element__place">Гора Эльбрус</p>
+                <button class="element__like"></button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/photo_3.png" alt="" class="element__photo">
+    
+                <div class="element__description">
+                <p class="element__place">Домбай</p>
+                <button class="element__like"></button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/photo_1.png" alt="" class="element__photo">
+    
+                <div class="element__description">
+                <p class="element__place">Карачаево-Черкеск</p>
+                <button class="element__like"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__signature">&#169; 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close"></button>
+            <form class="popup__form">                
+                <h1 class="popup__title">Редактировать профиль</h1>
+                <input type="text" value="" placeholder="Имя" class="popup__name">
+                <input type="text" value="" placeholder="О себе" class="popup__profession">
+                <button type="submit" class="popup__save">Сохранить</button>              
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./scripts/index.js" defer></script>
+</html>
