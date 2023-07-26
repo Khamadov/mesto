@@ -3,11 +3,12 @@
   cursor: pointer;
   width: 24px;
   height: 24px;
-  border: 0;
-  background-color: #000;
-  background-image: url(../../../images/Edit_Button.svg);
+  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../../../images/edit_Vector.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 10px;
+  background-position: center;
   margin-bottom: 8px;
 }
 
@@ -17,6 +18,7 @@
 
 @media screen and (max-width: 320px) {
   .profile__edit-button {
+    background-size: 7.5px;
     width: 18px;
     height: 18px;
   }

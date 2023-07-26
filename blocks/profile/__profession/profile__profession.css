@@ -1,6 +1,6 @@
 .profile__profession {
   max-width: 336px;
-  margin: 16px 0 0;
+  margin: 10px 0 0;
   font-size: 18px;
   font-weight: 400;
   line-height: normal;
@@ -10,6 +10,7 @@
 }
 @media screen and (max-width: 320px) {
   .profile__profession {
+    margin-top: 6px;
     max-width: 282px;
     text-align: center;
     font-size: 14px;

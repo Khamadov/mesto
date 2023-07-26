@@ -9,6 +9,7 @@
   font-weight: 400;
   line-height: normal;
   border-radius: 2px;
+  border: 0;
 }
 
 .popup__save:hover {
@@ -17,6 +18,7 @@
 
 @media screen and (max-width: 550px) {
   .popup__save {
+    height: 46px;
     margin-top: 45px;
     font-size: 14px;
   }

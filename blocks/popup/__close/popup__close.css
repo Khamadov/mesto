@@ -5,8 +5,8 @@
   height: 32px;
   width: 32px;
   position: absolute;
-  top: -42px;
-  right: -44px;
+  top: -40px;
+  right: -40px;
   border: 0;
   background-size: contain;
 }
@@ -19,7 +19,7 @@
   .popup__close {
     width: 20px;
     height: 20px;
-    top: -41px;
+    top: -35px;
     right: 0;
   }
 }
