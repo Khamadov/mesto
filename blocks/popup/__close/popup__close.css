@@ -1,7 +1,7 @@
 .popup__close {
   cursor: pointer;
   background-image: url(../../../images/Close_Icon.svg);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   height: 32px;
   width: 32px;
   position: absolute;
