@@ -22,68 +22,97 @@
           <div class="profile__info">
             <div class="profile__container">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button type="button" class="profile__edit-button" aria-label="Редактировать"></button>
+              <button
+                type="button"
+                class="profile__edit-button"
+                aria-label="Редактировать"
+              ></button>
             </div>
             <p class="profile__profession">Исследователь океана</p>
           </div>
         </div>
-        <button type="button" class="profile__add-button" aria-label="Добавить"></button>
+        <button
+          type="button"
+          class="profile__add-button"
+          aria-label="Добавить"
+        ></button>
       </section>
-      <section class="elements">
-      </section>
+      <section class="elements"></section>
     </main>
     <footer class="footer">
       <p class="footer__signature">&#169; 2020 Mesto Russia</p>
     </footer>
     <div id="popup-edit" class="popup">
       <div class="popup__container">
-        <button type="button" class="popup__close" aria-label="Закрыть"></button>
+        <button
+          type="button"
+          class="popup__close"
+          aria-label="Закрыть"
+        ></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form id="form-edit" name="form" class="popup__form">
+        <form id="form-edit" name="form" class="popup__form" novalidate>
           <input
             name="name"
             type="text"
             placeholder="Имя"
             class="popup__input popup__input_type_name"
+            minlength="2"
+            maxlength="40"
             required
           />
+          <span class="popup__error" id="name-error"></span>
           <input
             name="job"
             type="text"
             placeholder="О себе"
             class="popup__input popup__input_type_job"
+            minlength="2"
+            maxlength="200"
             required
           />
+          <span class="popup__error" id="job-error"></span>
           <button type="submit" class="popup__save">Сохранить</button>
         </form>
       </div>
     </div>
     <div id="popup-add" class="popup">
       <div class="popup__container">
-        <button type="button" class="popup__close" aria-label="Закрыть"></button>
+        <button
+          type="button"
+          class="popup__close"
+          aria-label="Закрыть"
+        ></button>
         <h3 class="popup__title">Новое место</h3>
-        <form id="form-add" name="form" class="popup__form">
+        <form id="form-add" name="form" class="popup__form" novalidate>
           <input
-            name="name"
-            type="text"           
+            name="place"
+            type="text"
             placeholder="Название"
             class="popup__input popup__input_type_place"
+            minlength="2"
+            maxlength="30"
             required
           />
+          <span class="popup__error" id="place-error"></span>
           <input
-            name="job"
+            name="link"
             type="url"
             placeholder="Ссылка на картинку"
             class="popup__input popup__input_type_link"
             required
           />
+          <span class="popup__error" id="link-error"></span>
           <button type="submit" class="popup__save">Создать</button>
         </form>
       </div>
     </div>
     <div id="popup-image" class="popup popup_color">
       <div class="popup__image">
-        <button type="button" class="popup__close" aria-label="Закрыть"></button>
+        <button
+          type="button"
+          class="popup__close"
+          aria-label="Закрыть"
+        ></button>
         <div class="popup__content">
           <img src="." alt="" class="popup__photo" />
           <p class="popup__subtitle"></p>
@@ -96,10 +125,15 @@
         <img src="." alt="" class="element__photo" />
         <div class="element__description">
           <h2 class="element__place"></h2>
-          <button type="button" class="element__like" aria-label="Лайк"></button>
+          <button
+            type="button"
+            class="element__like"
+            aria-label="Лайк"
+          ></button>
         </div>
       </article>
     </template>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/constants.js"></script>
     <script src="./scripts/index.js" defer></script>
   </body>

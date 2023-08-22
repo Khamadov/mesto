@@ -1,6 +1,6 @@
 const buttonEditPopup = document.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('#popup-edit');
-const buttonCloseEditPopup = popupEdit.querySelector('.popup__close');
+const buttonClosePopup = document.querySelectorAll('.popup__close');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__profession');
 const formEdit = popupEdit.querySelector('#form-edit');
@@ -15,10 +15,12 @@ function handleFormSubmitEdit(evt) {
 }
 
 function openPopup(open) {
+  document.addEventListener('keydown', closePopupKeydown);
   open.classList.add('popup_opened');
 }
 
 function closePopup(close) {
+  document.removeEventListener('keydown', closePopupKeydown);
   close.classList.remove('popup_opened');
 }
 
@@ -32,18 +34,34 @@ function closeEditPopup() {
   closePopup(popupEdit);
 }
 
+buttonClosePopup.forEach((btn) => {
+  const popup = btn.closest('.popup');
+  popup.addEventListener('click', closePopupOverlay);
+  btn.addEventListener('click', () => closePopup(popup));
+});
+
+function closePopupOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.target);
+  }
+}
+
+function closePopupKeydown(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
+
 formEdit.addEventListener('submit', handleFormSubmitEdit);
 buttonEditPopup.addEventListener('click', openEditPopup);
-buttonCloseEditPopup.addEventListener('click', closeEditPopup);
 
 const elementsList = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.element-template').content;
 const addPopup = document.querySelector('#popup-add');
 const addOpenPopupButton = document.querySelector('.profile__add-button');
 const addForm = addPopup.querySelector('#form-add');
-const addClosePopupButton = addPopup.querySelector('.popup__close');
 const imagePopup = document.querySelector('#popup-image');
-const imageClosePopupElement = imagePopup.querySelector('.popup__close');
 const photoInput = addForm.querySelector('.popup__input_type_link');
 const placeInput = addForm.querySelector('.popup__input_type_place');
 
@@ -120,5 +138,3 @@ function closeImagePopup() {
 
 addForm.addEventListener('submit', handleFormSubmitAdd);
 addOpenPopupButton.addEventListener('click', openAddPopup);
-addClosePopupButton.addEventListener('click', closeAddPopup);
-imageClosePopupElement.addEventListener('click', closeImagePopup);
