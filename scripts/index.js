@@ -62,6 +62,8 @@ const addPopup = document.querySelector('#popup-add');
 const addOpenPopupButton = document.querySelector('.profile__add-button');
 const addForm = addPopup.querySelector('#form-add');
 const imagePopup = document.querySelector('#popup-image');
+const imagePopupPhoto = imagePopup.querySelector('.popup__photo');
+const imagePopupSubtitle = imagePopup.querySelector('.popup__subtitle');
 const photoInput = addForm.querySelector('.popup__input_type_link');
 const placeInput = addForm.querySelector('.popup__input_type_place');
 
@@ -108,12 +110,11 @@ function handleLike(event) {
   event.target.classList.toggle('element__like_active');
 }
 
+
 function openImagePopup(item) {
-  const image = imagePopup.querySelector('.popup__photo');
-  const subtitle = imagePopup.querySelector('.popup__subtitle');
-  image.src = item.link;
-  image.alt = item.name;
-  subtitle.textContent = item.name;
+  imagePopupPhoto.src = item.link;
+  imagePopupPhoto.alt = item.name;
+  imagePopupSubtitle.textContent = item.name;
   openPopup(imagePopup);
 }
 
@@ -121,6 +122,8 @@ function handleFormSubmitAdd(evt) {
   evt.preventDefault();
   renderItem({ name: placeInput.value, link: photoInput.value });
   closePopup(addPopup);
+  evt.submitter.classList.add('popup__save_disabled');
+  evt.submitter.disabled = 'disabled';
 }
 
 function openAddPopup() {

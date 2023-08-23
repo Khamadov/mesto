@@ -11,6 +11,7 @@ function hideError(inputElement, errorElement, config) {
 function checkInputValidity(inputElement, formElement, config) {
   const isInputValid = inputElement.validity.valid;
   const errorElement = formElement.querySelector(`#${inputElement.name}-error`);
+
   if (isInputValid) {
     hideError(inputElement, errorElement, config);
   } else {
@@ -34,9 +35,8 @@ function setEventListener(formElement, config) {
   toggleButton(submitButton, formElement.checkValidity(), config);
   inputList.forEach(function (inputElement) {
     inputElement.addEventListener('input', function () {
-      checkInputValidity(inputElement, formElement, config);
       toggleButton(submitButton, formElement.checkValidity(), config);
-      
+      checkInputValidity(inputElement, formElement, config);
     });
   });
   formElement.addEventListener('submit', function (evt) {
