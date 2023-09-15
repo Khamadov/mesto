@@ -9,7 +9,8 @@ export default class Card {
   _getTemplate() {
     return document
       .querySelector(this._templateSelector)
-      .content.cloneNode(true);
+      .content.querySelector(".element")
+      .cloneNode(true);
   }
 
   createCard() {
@@ -28,10 +29,14 @@ export default class Card {
   _addListenersForItem() {
     const addDeleteButton =
       this._newHtmlElement.querySelector(".element__delete");
-    addDeleteButton.addEventListener("click", this._handleDelete());
+    addDeleteButton.addEventListener("click", () => {
+      this._handleDelete();
+    });
 
     const addLikeButton = this._newHtmlElement.querySelector(".element__like");
-    addLikeButton.addEventListener("click", this._handleLike());
+    addLikeButton.addEventListener("click", (event) => {
+      this._handleLike(event);
+    });
 
     const showImage = this._newHtmlElement.querySelector(".element__photo");
     showImage.addEventListener("click", () =>
@@ -39,16 +44,11 @@ export default class Card {
     );
   }
 
-  _handleDelete(event) {
-    return (event) => {
-      const currentDelete = event.target.closest(".element");
-      currentDelete.remove();
-    };
+  _handleDelete() {
+    this._newHtmlElement.remove();
   }
 
   _handleLike(event) {
-    return (event) => {
-      event.target.classList.toggle("element__like_active");
-    };
+    event.target.classList.toggle("element__like_active");
   }
 }

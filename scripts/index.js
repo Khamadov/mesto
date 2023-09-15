@@ -92,13 +92,13 @@ function handleFormSubmitAdd(evt) {
   evt.preventDefault();
   renderItem({ name: placeInput.value, link: photoInput.value });
   closePopup(addPopup);
-  evt.submitter.classList.add("popup__save_disabled");
-  evt.submitter.disabled = "disabled";
+  addCardValidator.resetButton();
 }
 
 function openAddPopup() {
   openPopup(addPopup);
   addForm.reset();
+  addCardValidator.resetButton();
 }
 
 function closeAddPopup() {
